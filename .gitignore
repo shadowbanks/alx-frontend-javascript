@@ -1,2 +1,7 @@
 node_modules
 *main.js
+package.json
+package-lock.json
+babel.config.js
+.eslintrc.js
+practice.js
