@@ -5,12 +5,20 @@ interface Teacher {
     yearsOfExperience?: number,
     location: string,
     [anyObj: string]: any,
-}
+};
 
 interface Directors extends Teacher{
     numberOfReports: number,
-}
+};
 
+interface printTeacherFunction{
+    (firstName: string,
+    lastName: string) : string
+};
+
+const printTeacher: printTeacherFunction = ((firstName, lastName) => `${firstName[0]}. ${lastName}`);
+
+// console.log(printTeacher("John", "Doe"));
 // const teacher3: Teacher = {
 //     firstName: 'John',
 //     fullTimeEmployee: false,
@@ -21,11 +29,11 @@ interface Directors extends Teacher{
 
 //   console.log(teacher3);
 
-const director1: Directors = {
-    firstName: 'John',
-    lastName: 'Doe',
-    location: 'London',
-    fullTimeEmployee: true,
-    numberOfReports: 17,
-  };
-  console.log(director1);
+// const director1: Directors = {
+//     firstName: 'John',
+//     lastName: 'Doe',
+//     location: 'London',
+//     fullTimeEmployee: true,
+//     numberOfReports: 17,
+//   };
+//   console.log(director1);
