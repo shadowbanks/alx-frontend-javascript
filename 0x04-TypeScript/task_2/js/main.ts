@@ -47,6 +47,21 @@ function createEmployee(salary: number | string) : Teacher | Director {
     return new Director();
 }
 
+function isDirector(employee: TeacherInterface | DirectorInterface): employee is Director {
+    return employee instanceof Director;
+}
+
+function executeWork(employee: TeacherInterface | DirectorInterface) {
+    if (isDirector(employee)){
+        return employee.workDirectorTasks();
+    }
+    return employee.workTeacherTasks();
+}
+
+console.log(executeWork(createEmployee(200)));
+// Getting to work
+console.log(executeWork(createEmployee(1000)));
+// Getting to director tasks
 
 // console.log(createEmployee(200));
 // console.log(createEmployee(1000));
