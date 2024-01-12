@@ -58,9 +58,17 @@ function executeWork(employee: TeacherInterface | DirectorInterface) {
     return employee.workTeacherTasks();
 }
 
-console.log(executeWork(createEmployee(200)));
+type Student = 'Math' | 'History'
+
+function teachClass(todayClass: Student): string {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    return 'Teaching History';
+}
+// console.log(executeWork(createEmployee(200)));
 // Getting to work
-console.log(executeWork(createEmployee(1000)));
+// console.log(executeWork(createEmployee(1000)));
 // Getting to director tasks
 
 // console.log(createEmployee(200));
