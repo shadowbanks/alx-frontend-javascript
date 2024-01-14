@@ -9,7 +9,8 @@ export default function cleanSet(set, startString) {
       if (check) {
         returnOutput += '-';
       } else check = true;
-      returnOutput += item.slice(strLen);
+
+      if (item !== startString) returnOutput += item.slice(strLen);
     }
   }
   return returnOutput;
